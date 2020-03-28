@@ -138,5 +138,5 @@ top5_countries <- data_evolution %>%
   summarise(value = sum(value, na.rm = T)) %>%
   arrange(desc(value)) %>%
   filter(`Country/Region` == "Cyprus" | `Country/Region` == "Turkey" | `Country/Region` == "Iceland" | `Country/Region` == "Singapore" | `Country/Region` == "Taiwan*") %>%
-  #select(`Country/Region`) %>%
+  select(`Country/Region`) %>%
   pull()
