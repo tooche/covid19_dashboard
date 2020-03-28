@@ -8,7 +8,7 @@ body_about <- dashboardBody(
             "This dashboard shows recent developments of the COVID-19 pandemic. The latest
             open data on the COVID-19 spread are regularly downloaded and displayed in
             a map, summary tables, key figures and plots.This dashboard is built with R and has been adapted by Tugce Karaderi from this 
-            [dashboard](https://github.com/chschoenenberger/covid19_dashboard/)",
+            (https://github.com/chschoenenberger/covid19_dashboard/)",
             tags$br(),
             h3("Motivation"),
             "Various companies thought that a global crisis is an excellent opportunity to
