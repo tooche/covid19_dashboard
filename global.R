@@ -100,8 +100,8 @@ population[which(population$country %in% countryNamesPop), "country"] <- country
 
 # Data from wikipedia
 noDataCountries <- data.frame(
-  country    = c("Cruise Ship", "Guadeloupe", "Guernsey", "Holy See", "Jersey", "Martinique", "Reunion", "Taiwan*"),
-  population = c(3700, 395700, 63026, 800, 106800, 376480, 859959, 23780452)
+  country    = c("Cruise Ship", "Guadeloupe", "Guernsey", "Holy See", "Jersey", "Martinique", "Reunion", "Taiwan*", "Cyprus (North)"),
+  population = c(3700, 395700, 63026, 800, 106800, 376480, 859959, 23780452, 500000)
 )
 population      <- bind_rows(population, noDataCountries)
 
@@ -121,11 +121,21 @@ data_atDate <- function(inputDate) {
 
 data_latest <- data_atDate(max(data_evolution$date))
 
+#top5_countries <- data_evolution %>%
+  #filter(var == "active", date == current_date) %>%
+  #group_by(`Country/Region`) %>%
+  #summarise(value = sum(value, na.rm = T)) %>%
+  #arrange(desc(value)) %>%
+  #top_n(5) %>%
+  #select(`Country/Region`) %>%
+  #pull()
+
+
 top5_countries <- data_evolution %>%
   filter(var == "active", date == current_date) %>%
   group_by(`Country/Region`) %>%
   summarise(value = sum(value, na.rm = T)) %>%
   arrange(desc(value)) %>%
-  top_n(5) %>%
+  filter(`Country/Region` == "Cyprus" & `Country/Region` == "Turkey" & `Country/Region` == "Iceland" & `Country/Region` == "Singapore" & `Country/Region` == "Taiwan*") %>%
   select(`Country/Region`) %>%
   pull()
