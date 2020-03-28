@@ -132,12 +132,11 @@ data_latest <- data_atDate(max(data_evolution$date))
   #select(`Country/Region`) %>%
   #pull()
 
-
 top5_countries <- data_evolution %>%
   filter(var == "active", date == current_date) %>%
   group_by(`Country/Region`) %>%
   summarise(value = sum(value, na.rm = T)) %>%
   arrange(desc(value)) %>%
-  filter(`Country/Region` == "Cyprus" & `Country/Region` == "Turkey" & `Country/Region` == "Iceland" & `Country/Region` == "Singapore" & `Country/Region` == "Taiwan*") %>%
-  select(`Country/Region`) %>%
+  filter(`Country/Region` == "Cyprus" | `Country/Region` == "Turkey" | `Country/Region` == "Iceland" | `Country/Region` == "Singapore" | `Country/Region` == "Taiwan*") %>%
+  #select(`Country/Region`) %>%
   pull()
