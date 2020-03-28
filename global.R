@@ -100,8 +100,10 @@ population[which(population$country %in% countryNamesPop), "country"] <- country
 
 # Data from wikipedia
 noDataCountries <- data.frame(
-  country    = c("Cruise Ship", "Guadeloupe", "Guernsey", "Holy See", "Jersey", "Martinique", "Reunion", "Taiwan*", "Cyprus (North)"),
-  population = c(3700, 395700, 63026, 800, 106800, 376480, 859959, 23780452, 500000)
+  #country    = c("Cruise Ship", "Guadeloupe", "Guernsey", "Holy See", "Jersey", "Martinique", "Reunion", "Taiwan*", "Cyprus (North)"),
+  country    = c("Cruise Ship", "Guadeloupe", "Guernsey", "Holy See", "Jersey", "Martinique", "Reunion", "Taiwan*"),
+  #population = c(3700, 395700, 63026, 800, 106800, 376480, 859959, 23780452, 500000)
+  population = c(3700, 395700, 63026, 800, 106800, 376480, 859959, 23780452)
 )
 population      <- bind_rows(population, noDataCountries)
 
